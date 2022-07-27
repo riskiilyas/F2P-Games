@@ -3,6 +3,7 @@ package com.keecoding.f2pgames.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +13,7 @@ import com.keecoding.f2pgames.data.db.model.GameModel
 import com.keecoding.f2pgames.databinding.ItemGameLayoutBinding
 
 class GamesAdapter(
-    private val onClick: (Int) -> Unit
+    private val onClick: (Int, ImageView) -> Unit
 ): RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
 
     private val callback = object : DiffUtil.ItemCallback<GameModel>() {
@@ -39,7 +40,7 @@ class GamesAdapter(
                 "Web Browser" -> binding.ivPlatform.setImageResource(R.drawable.ic_baseline_web_24)
             }
 
-//            binding.root.setOnClickListener { onClick(gameModel.id) }
+            binding.root.setOnClickListener { onClick(gameModel.id, binding.imageView) }
         }
     }
 

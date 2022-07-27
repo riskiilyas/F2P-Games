@@ -13,6 +13,6 @@ object AdapterModule {
 
     @Provides
     @Singleton
-    fun provideGameAdapter() = GamesAdapter{}
+    fun provideGameAdapter() = GamesAdapter{id, iv ->}
 
 }

@@ -45,7 +45,12 @@
         android:id="@+id/gameDetailFragment"
         android:name="com.keecoding.f2pgames.presentation.ui.GameDetailFragment"
         android:label="fragment_game_detail"
-        tools:layout="@layout/fragment_game_detail" />
+        tools:layout="@layout/fragment_game_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.keecoding.f2pgames.presentation.ui.FavoriteFragment"

@@ -19,12 +19,14 @@ inline fun <ResultType, RequestType> networkBoundResource(
             val fetchData = fetch()
             if (isFetchSuccess()) {
                 saveFetchResult(fetchData)
+                Log.d("aaa", "networkBoundResource: afeaesf")
                 query().map { Resource.Success(it) }
             } else {
-                Log.d("bananaa", "networkBoundResource: FAILED")
+                Log.d("ddddd", "networkBoundResource: ")
                 query().map { Resource.Error("Failed to Get Data From API", it) }
             }
         } catch (throwable: Throwable) {
+            Log.d("aaa", "networkBoundResource: iuiuiiuuib" + throwable.message)
             query().map { Resource.Error(throwable.message ?: "", it) }
         }
     } else {

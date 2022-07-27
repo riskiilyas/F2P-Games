@@ -19,6 +19,7 @@
             android:layout_width="160dp"
             android:layout_height="0dp"
             tools:background="@color/shimmer"
+            android:transitionName="image_thumbnail"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/tvReleaseDate"
             app:layout_constraintStart_toStartOf="parent"

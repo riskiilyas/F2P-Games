@@ -13,5 +13,5 @@ interface RemoteDataSource {
 
     fun getGameDetail(
         id: Int
-    ): GameDetailResponse
+    ): Call<GameDetailResponse>
 }

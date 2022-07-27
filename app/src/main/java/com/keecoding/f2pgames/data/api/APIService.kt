@@ -17,5 +17,5 @@ interface APIService {
     @GET("game")
     fun getGameDetail(
         @Query("id") id: Int
-    ): GameDetailResponse
+    ): Call<GameDetailResponse>
 }

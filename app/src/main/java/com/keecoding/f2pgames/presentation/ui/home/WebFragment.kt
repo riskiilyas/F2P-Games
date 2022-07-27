@@ -15,7 +15,9 @@ import com.keecoding.f2pgames.presentation.vm.MainViewModel
 class WebFragment : Fragment() {
     private lateinit var binding: FragmentWebBinding
     private lateinit var viewModel: MainViewModel
-    private val gamesAdapter = GamesAdapter{}
+    private val gamesAdapter = GamesAdapter{ id, iv->
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

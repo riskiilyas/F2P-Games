@@ -9,6 +9,10 @@ import com.keecoding.f2pgames.domain.usecases.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.catch
+import java.sql.Time
+import java.sql.Timestamp
+import java.text.Format
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -24,8 +28,8 @@ class MainViewModel @Inject constructor(
     private val _gamesLiveData = MutableLiveData<Resource<List<GameModel>>>()
     val gamesLiveData : LiveData<Resource<List<GameModel>>> get() = _gamesLiveData
 
-    private val _gameDetailLiveData = MutableLiveData<Resource<List<GameDetailModel>>>()
-    val gameDetailLiveData : LiveData<Resource<List<GameDetailModel>>> get() = _gameDetailLiveData
+    private val _gameDetailLiveData = MutableLiveData<Resource<GameDetailModel>>()
+    val gameDetailLiveData : LiveData<Resource<GameDetailModel>> get() = _gameDetailLiveData
 
     fun getAllGames() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -38,13 +42,14 @@ class MainViewModel @Inject constructor(
     }
 
     fun getGameDetail(id: Int) {
+        Log.d("ddddd", "getGameDetail: $id")
         viewModelScope.launch {
             getGameDetailUseCase.execute(id)
                 .catch {
 
                 }
                 .collect {
-
+                    _gameDetailLiveData.postValue(it)
                 }
         }
     }

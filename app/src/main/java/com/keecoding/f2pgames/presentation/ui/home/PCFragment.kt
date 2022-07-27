@@ -16,7 +16,9 @@ import com.keecoding.f2pgames.presentation.vm.MainViewModel
 class PCFragment : Fragment() {
     private lateinit var binding: FragmentPcBinding
     private lateinit var viewModel: MainViewModel
-    private val gamesAdapter = GamesAdapter{}
+    private val gamesAdapter = GamesAdapter{id, iv ->
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

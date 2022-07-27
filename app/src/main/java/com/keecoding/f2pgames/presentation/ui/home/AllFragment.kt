@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.keecoding.f2pgames.R
@@ -17,7 +19,12 @@ import javax.inject.Inject
 
 class AllFragment : Fragment() {
     private lateinit var binding: FragmentAllBinding
-    private val gamesAdapter = GamesAdapter{}
+    private val gamesAdapter = GamesAdapter{ id, iv ->
+        val extras = FragmentNavigatorExtras(iv to "image_thumbnail_big")
+        val bundle = bundleOf("id" to id)
+        findNavController().navigate(R.id.action_allFragment_to_gameDetailFragment,bundle,null,extras)
+    }
+
     private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(

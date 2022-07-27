@@ -18,7 +18,7 @@ class RemoteDataSourceImpl @Inject constructor(
         return gameService.getGames()
     }
 
-    override fun getGameDetail(id: Int): GameDetailResponse {
+    override fun getGameDetail(id: Int): Call<GameDetailResponse> {
         return gameService.getGameDetail(id)
     }
 }

@@ -1,6 +1,7 @@
 package com.keecoding.f2pgames.data.repo
 
 import com.keecoding.f2pgames.data.api.response_model.GameItemResponse
+import com.keecoding.f2pgames.data.api.response_model.gamedetail.GameDetailResponse
 import com.keecoding.f2pgames.data.db.model.GameDetailModel
 import com.keecoding.f2pgames.data.db.model.GameModel
 import com.keecoding.f2pgames.data.repo.datasource.LocalDataSource
@@ -66,7 +67,21 @@ class RepositoryImpl @Inject constructor(
                 remoteDataSource.getGameDetail(id)
             },
             saveFetchResult = {
-                localDataSource.insertGameDetail(it.toGameDetailModel())
+                it.enqueue(object : Callback<GameDetailResponse> {
+                    override fun onResponse(
+                        call: Call<GameDetailResponse>,
+                        response: Response<GameDetailResponse>
+                    ) {
+                        if(response.isSuccessful) {
+                            response.body()?.let { detail ->
+                                localDataSource.insertGameDetail(detail.toGameDetailModel())
+                            }
+                        }
+                    }
+
+                    override fun onFailure(call: Call<GameDetailResponse>, t: Throwable) {
+                    }
+                })
             }
         )
     }

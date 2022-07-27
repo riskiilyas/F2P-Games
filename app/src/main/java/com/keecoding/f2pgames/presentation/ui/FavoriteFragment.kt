@@ -15,7 +15,9 @@ class FavoriteFragment : Fragment() {
 
     private lateinit var binding: FragmentFavoriteBinding
     private lateinit var viewModel: MainViewModel
-    private val gamesAdapter = GamesAdapter()
+    private val gamesAdapter = GamesAdapter { id, iv ->
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
