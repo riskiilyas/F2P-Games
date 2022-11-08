@@ -45,9 +45,7 @@ class MainViewModel @Inject constructor(
         Log.d("ddddd", "getGameDetail: $id")
         viewModelScope.launch {
             getGameDetailUseCase.execute(id)
-                .catch {
-
-                }
+                .catch {}
                 .collect {
                     _gameDetailLiveData.postValue(it)
                 }

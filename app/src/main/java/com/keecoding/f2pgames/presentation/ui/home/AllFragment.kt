@@ -20,9 +20,9 @@ import javax.inject.Inject
 class AllFragment : Fragment() {
     private lateinit var binding: FragmentAllBinding
     private val gamesAdapter = GamesAdapter{ id, iv ->
-        val extras = FragmentNavigatorExtras(iv to "image_thumbnail_big")
+//        val extras = FragmentNavigatorExtras(iv to "image_thumbnail_big")
         val bundle = bundleOf("id" to id)
-        findNavController().navigate(R.id.action_allFragment_to_gameDetailFragment,bundle,null,extras)
+        findNavController().navigate(R.id.action_allFragment_to_gameDetailFragment,bundle)
     }
 
     private lateinit var viewModel: MainViewModel

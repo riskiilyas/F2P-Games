@@ -1,13 +1,19 @@
 package com.keecoding.f2pgames.presentation.ui
 
+import android.annotation.SuppressLint
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.core.graphics.drawable.DrawableCompat
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.keecoding.f2pgames.R
 import com.keecoding.f2pgames.data.util.Resource
 import com.keecoding.f2pgames.databinding.FragmentGameDetailBinding
 import com.keecoding.f2pgames.presentation.vm.MainViewModel
@@ -38,12 +44,33 @@ class GameDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         vm = (activity as MainActivity).getViewModel()
 
+//        binding.ivThumbnail.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.ffade_in)
+
         vm.getGameDetail(arguments?.getInt("id") ?: -1)
 
         vm.gameDetailLiveData.observe(viewLifecycleOwner) {
             when(it) {
                 is Resource.Success -> {
+                    when(it.data?.platform) {
+                        "pc" -> {
+                            binding.ivPlatform.setBackgroundResource(R.drawable.ic_baseline_computer_24)
+                            binding.ivPlatform.setImageResource(R.drawable.ic_baseline_computer_24)
+                        }
+
+                        "browser" -> {
+                            binding.ivPlatform.setBackgroundResource(R.drawable.ic_baseline_web_24)
+                            binding.ivPlatform.setImageResource(R.drawable.ic_baseline_web_24)
+                        }
+                    }
+
                     Glide.with(requireContext()).load(it.data?.thumbnail ?: "").into(binding.ivThumbnail)
+
+                    binding.tvTitle.text = it.data?.title
+
+                    binding.ivBack.setOnClickListener {
+                        findNavController().popBackStack()
+                        vm.clearGameDetail()
+                    }
                 }
 
                 is Resource.Loading -> {

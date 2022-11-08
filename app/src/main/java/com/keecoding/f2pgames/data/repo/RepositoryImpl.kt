@@ -1,5 +1,6 @@
 package com.keecoding.f2pgames.data.repo
 
+import android.util.Log
 import com.keecoding.f2pgames.data.api.response_model.GameItemResponse
 import com.keecoding.f2pgames.data.api.response_model.gamedetail.GameDetailResponse
 import com.keecoding.f2pgames.data.db.model.GameDetailModel
@@ -79,8 +80,7 @@ class RepositoryImpl @Inject constructor(
                         }
                     }
 
-                    override fun onFailure(call: Call<GameDetailResponse>, t: Throwable) {
-                    }
+                    override fun onFailure(call: Call<GameDetailResponse>, t: Throwable) {}
                 })
             }
         )
