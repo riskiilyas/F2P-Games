@@ -1,4 +1,4 @@
-package com.keecoding.f2pgames.presentation.vm
+package com.keecoding.f2pgames.presentation.ui
 
 import android.util.Log
 import androidx.lifecycle.*

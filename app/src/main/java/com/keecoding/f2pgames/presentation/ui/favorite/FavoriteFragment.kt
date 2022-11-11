@@ -1,4 +1,4 @@
-package com.keecoding.f2pgames.presentation.ui
+package com.keecoding.f2pgames.presentation.ui.favorite
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.keecoding.f2pgames.data.util.Resource
 import com.keecoding.f2pgames.databinding.FragmentFavoriteBinding
 import com.keecoding.f2pgames.presentation.adapter.GamesAdapter
-import com.keecoding.f2pgames.presentation.vm.MainViewModel
+import com.keecoding.f2pgames.presentation.ui.MainActivity
+import com.keecoding.f2pgames.presentation.ui.MainViewModel
 
 class FavoriteFragment : Fragment() {
 

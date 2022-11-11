@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.keecoding.f2pgames.R
@@ -14,8 +13,7 @@ import com.keecoding.f2pgames.data.util.Resource
 import com.keecoding.f2pgames.databinding.FragmentAllBinding
 import com.keecoding.f2pgames.presentation.adapter.GamesAdapter
 import com.keecoding.f2pgames.presentation.ui.MainActivity
-import com.keecoding.f2pgames.presentation.vm.MainViewModel
-import javax.inject.Inject
+import com.keecoding.f2pgames.presentation.ui.MainViewModel
 
 class AllFragment : Fragment() {
     private lateinit var binding: FragmentAllBinding

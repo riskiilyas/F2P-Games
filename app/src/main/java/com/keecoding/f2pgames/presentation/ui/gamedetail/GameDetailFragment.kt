@@ -1,22 +1,19 @@
-package com.keecoding.f2pgames.presentation.ui
+package com.keecoding.f2pgames.presentation.ui.gamedetail
 
-import android.annotation.SuppressLint
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.Toast
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.keecoding.f2pgames.R
 import com.keecoding.f2pgames.data.util.Resource
 import com.keecoding.f2pgames.databinding.FragmentGameDetailBinding
-import com.keecoding.f2pgames.presentation.vm.MainViewModel
+import com.keecoding.f2pgames.presentation.ui.MainActivity
+import com.keecoding.f2pgames.presentation.ui.MainViewModel
 
 class GameDetailFragment : Fragment() {
     private lateinit var binding: FragmentGameDetailBinding

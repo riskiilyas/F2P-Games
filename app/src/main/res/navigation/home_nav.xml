@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameDetailFragment"
-        android:name="com.keecoding.f2pgames.presentation.ui.GameDetailFragment"
+        android:name="com.keecoding.f2pgames.presentation.ui.gamedetail.GameDetailFragment"
         android:label="fragment_game_detail"
         tools:layout="@layout/fragment_game_detail" >
         <argument
@@ -53,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.keecoding.f2pgames.presentation.ui.FavoriteFragment"
+        android:name="com.keecoding.f2pgames.presentation.ui.favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" >
         <action

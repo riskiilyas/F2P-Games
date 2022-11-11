@@ -11,7 +11,7 @@ import com.keecoding.f2pgames.data.util.Resource
 import com.keecoding.f2pgames.databinding.FragmentPcBinding
 import com.keecoding.f2pgames.presentation.adapter.GamesAdapter
 import com.keecoding.f2pgames.presentation.ui.MainActivity
-import com.keecoding.f2pgames.presentation.vm.MainViewModel
+import com.keecoding.f2pgames.presentation.ui.MainViewModel
 
 class PCFragment : Fragment() {
     private lateinit var binding: FragmentPcBinding

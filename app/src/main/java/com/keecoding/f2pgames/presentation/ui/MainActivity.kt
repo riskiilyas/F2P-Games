@@ -1,23 +1,17 @@
 package com.keecoding.f2pgames.presentation.ui
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavHostController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.keecoding.f2pgames.R
 import com.keecoding.f2pgames.data.util.Resource
 import com.keecoding.f2pgames.databinding.ActivityMainBinding
-import com.keecoding.f2pgames.presentation.adapter.GamesAdapter
 import com.keecoding.f2pgames.presentation.factory.ViewModelFactory
-import com.keecoding.f2pgames.presentation.vm.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

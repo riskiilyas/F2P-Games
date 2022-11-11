@@ -1,10 +1,9 @@
 package com.keecoding.f2pgames.presentation.factory
 
-import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.keecoding.f2pgames.domain.usecases.*
-import com.keecoding.f2pgames.presentation.vm.MainViewModel
+import com.keecoding.f2pgames.presentation.ui.MainViewModel
 
 class ViewModelFactory(
     private val addToFavoriteUseCase: AddToFavoriteUseCase,
